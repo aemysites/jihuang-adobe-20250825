@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 .cards > ul {
   list-style: none;
   margin: 0;
@@ -24,4 +25,148 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+
+.cards.cards33 {
+  background: #fff;
+}
+
+.cards.cards33 > ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  place-items: stretch stretch;
+}
+
+.cards.cards33 > ul > li {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgb(40 40 40 / 3%);
+  border: none;
+  padding: 10px 12px;
+  min-height: 132px;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 0;
+  transition: box-shadow 0.2s;
+}
+
+/* Make image and text columns match height, and image fill card column */
+.cards.cards33 .cards-card-image {
+  flex: 0 0 126px;
+  min-width: 126px;
+  max-width: 140px;
+  margin-right: 12px;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  height: 100%;
+}
+
+.cards.cards33 .cards-card-image img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+.cards.cards33 .cards-card-body {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 4px;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+/* Tag+read time row: strict horizontal (row) layout and baseline alignment */
+.cards.cards33 .cards-card-body p:nth-child(1),
+.cards.cards33 .cards-card-body p:nth-child(2) {
+  display: inline-block;
+  vertical-align: baseline;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.cards.cards33 .cards-card-body p:nth-child(1) {
+  background: #dbdbdb;
+  color: #232323;
+  padding: 1px 6px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 6px;
+  margin-right: 6px;
+  letter-spacing: 0.04em;
+  min-width: 0;
+  max-width: 68px;
+  text-align: center;
+}
+
+.cards.cards33 .cards-card-body p:nth-child(2) {
+  color: #8a8a8a;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  min-width: 0;
+}
+
+.cards.cards33 .cards-card-body p:nth-child(2) + h3 {
+  margin-top: 4px;
+}
+
+/* Heading and description spacing */
+.cards.cards33 .cards-card-body h3 {
+  font-size: 17px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #232323;
+  margin: 0 0 2px;
+  letter-spacing: 0.01em;
+  line-height: 1.09;
+}
+
+.cards.cards33 .cards-card-body p:nth-child(4) {
+  color: #444;
+  font-size: 13px;
+  line-height: 1.28;
+  margin-top: 0;
+}
+
+/* Remove excess whitespace around cards */
+
+/* Responsive adjustments */
+@media (width <= 900px) {
+  .cards.cards33 > ul {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .cards.cards33 > ul > li {
+    flex-direction: column;
+    min-height: unset;
+    padding: 7px;
+  }
+
+  .cards.cards33 .cards-card-image {
+    margin-right: 0;
+    margin-bottom: 7px;
+    max-width: 100%;
+    min-width: 64px;
+    height: 90px;
+  }
+
+  .cards.cards33 .cards-card-image img {
+    height: 100%;
+  }
 }
